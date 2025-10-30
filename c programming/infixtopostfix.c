@@ -1,8 +1,10 @@
+// C program to convert infix expression to postfix expression using stack
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
-#define MAX 100
+#define MAX 100 //
 char stack[MAX];
 int top = -1;
 void push(char c)

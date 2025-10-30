@@ -1,22 +1,22 @@
-class Node {
+class MyListNode {
     int data;
-    Node next;
+    MyListNode next;
 
-    Node(int data) {
+    MyListNode(int data) {
         this.data = data;
         this.next = null;
     }
 }
 
 class oddEven {
-    Node head;
+    MyListNode head;
 
     public void insert(int data) {
-        Node newnode = new Node(data);
+        MyListNode newnode = new MyListNode(data);
         if (head == null) {
             head = newnode;
         } else {
-            Node current = head;
+            MyListNode current = head;
             while (current.next != null) {
                 current = current.next;
             }
@@ -24,10 +24,10 @@ class oddEven {
         }
     }
 
-    public Node findOddEven() {
-        Node odd = head;
-        Node even = head != null ? head.next : null;
-        Node evenHead = even;
+    public MyListNode findOddEven() {
+        MyListNode odd = head;
+        MyListNode even = head != null ? head.next : null;
+        MyListNode evenHead = even;
         while (even != null && even.next != null) {
             odd.next = even.next;
             odd = odd.next;
@@ -41,7 +41,7 @@ class oddEven {
     }
 
     public void display() {
-        Node current = head;
+        MyListNode current = head;
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;
@@ -59,7 +59,7 @@ class oddEven {
         System.out.println("Original List:");
         list.display();
 
-        Node rearrangedHead = list.findOddEven();
+        MyListNode rearrangedHead = list.findOddEven();
         System.out.println("Rearranged List (Odd-Even):");
         while (rearrangedHead != null) {
             System.out.print(rearrangedHead.data + " ");

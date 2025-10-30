@@ -108,7 +108,7 @@ int main()
     insertNode(30);
     insertNode(40);
     insertNode(50);
-    deletefromLast(50);
+    deletefromLast();
     Reverse(&linkedList->head);
     displayNode();
     return 0;

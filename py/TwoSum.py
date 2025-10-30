@@ -9,12 +9,14 @@ class Solution:
         for i in range(len(nums)):
             # Calculate the complement of the current element with the target
             complement = target - nums[i]
-            if complement in hash_map:
+            if complement in hash_map: # Check if the complement is already present in the hash map
                 return [hash_map[complement], i]
             hash_map[nums[i]] = i
 
+s = Solution()
+print(s.TwoSum(nums=[2, 7, 11, 15], target=9))
 
-print(Solution().TwoSum([2, 7, 11, 15], 9))
+
 
 # output: [0, 1]
 
