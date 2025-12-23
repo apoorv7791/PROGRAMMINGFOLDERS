@@ -8,7 +8,7 @@ class yes {
         Backtrack(nums, res, temp);
         return res;
     }
-
+        
     public void Backtrack(int[] nums, List<List<Integer>> res, List<Integer> temp) {
         if (temp.size() == nums.length) {
             res.add(new ArrayList<>(temp));
