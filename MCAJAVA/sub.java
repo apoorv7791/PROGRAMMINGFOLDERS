@@ -8,26 +8,27 @@ import java.util.HashSet;
 
 class sub {
     public int lengthOfLongestSubstring(String s) {
-        int left = 0;
-        int maxlen = 0;
-        HashSet<Character> set = new HashSet<>();
-        int i = 0;
-        while (i < s.length()) {
-            if (set.contains(s.charAt(i))) {
+        var left = 0;
+        var right = 0;
+        var maxLength = 0;
+        var set = new HashSet<Character>();
+        while (right < s.length()) {
+            char currentChar = s.charAt(right);
+            if (!set.contains(currentChar)) {
+                set.add(currentChar);
+                right++;
+                maxLength = Math.max(maxLength, right - left);
+            } else {
                 set.remove(s.charAt(left));
                 left++;
-            } else {
-                set.add(s.charAt(i));
-                maxlen = Math.max(maxlen, i - left + 1);
-                i++;
             }
         }
-        return maxlen;
+        return maxLength;
     }
 
     public static void main(String[] args) {
         sub obj = new sub();
-        String s = "abcabcbb";
+        var s = "abcabcbb";
         System.out.println(obj.lengthOfLongestSubstring(s)); // Output: 3
     }
 }
