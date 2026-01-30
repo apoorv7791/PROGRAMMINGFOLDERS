@@ -1,4 +1,4 @@
-import java.util.HashMap;
+import java.util.*;
 
 class mapping {
     void main() {
