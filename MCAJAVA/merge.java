@@ -1,90 +1,58 @@
-public class merge {
+class merge {
+    void sort(int[] arr, int left, int right){
+        if (left >= right) return;
+        int mid = left + (right - left) / 2;
 
-    // Main function that sorts arr[l..r] using merge()
-    public void sort(int arr[], int l, int r) {
-        if (l < r) {
-            // Find the middle point
-            int m = (l + r) / 2;
+        sort(arr, left, mid);
+        sort(arr, mid + 1, right);
 
-            // Sort first and second halves
-            sort(arr, l, m);
-            sort(arr, m + 1, r);
+        merging(arr, left, mid, right);
 
-            // Merge the sorted halves
-            mergeArrays(arr, l, m, r);
-        }
     }
+    void merging(int[] arr, int left, int mid, int right){
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+        int[] L = new int[n1];
+        int[] R = new int[n2];
 
-    // Merges two subarrays of arr[].
-    // First subarray is arr[l..m]
-    // Second subarray is arr[m+1..r]
-    public void mergeArrays(int arr[], int l, int m, int r) {
-        // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        for(int i = 0; i < n1; i++){
+            L[i] = arr[left + i];
+        }
+        for(int j = 0; j < n2; j++){
+            R[j] = arr[mid + 1 + j];
+        }
 
-        // Create temp arrays
-        int L[] = new int[n1];
-        int R[] = new int[n2];
+        int i = 0;
+        int j = 0;
+        int k = left;
 
-        // Copy data to temp arrays
-        for (int i = 0; i < n1; ++i)
-            L[i] = arr[l + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = arr[m + 1 + j];
-
-        // Merge the temp arrays
-
-        // Initial indexes of first and second subarrays
-        int i = 0, j = 0;
-
-        // Initial index of merged subarray array
-        int k = l;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
+        while(i < n1 && j < n2){
+            if (L[i] <= R[j]){
                 arr[k] = L[i];
                 i++;
-            } else {
+            }
+            else {
                 arr[k] = R[j];
                 j++;
             }
             k++;
         }
-
-        // Copy remaining elements of L[] if any
-        while (i < n1) {
+        while(i < n1){
             arr[k] = L[i];
             i++;
             k++;
         }
-
-        // Copy remaining elements of R[] if any
-        while (j < n2) {
+        while(j < n2){
             arr[k] = R[j];
             j++;
             k++;
         }
+
     }
+    void main(){
+        int[] arr = {5, 2, 8, 1, 9, 3, 7, 4, 6};
+        sort(arr, 0, arr.length - 1);
+        System.out.println(java.util.Arrays.toString(arr));
 
-    // Utility function to print array of size n
-    static void printArray(int arr[]) {
-        int n = arr.length;
-        for (int i = 0; i < n; ++i)
-            System.out.print(arr[i] + " ");
-        System.out.println();
-    }
-
-    // Driver method
-    public static void main(String args[]) {
-        int arr[] = { 12, 11, 13, 5, 6, 7 };
-
-        System.out.println("Given Array");
-        printArray(arr);
-
-        merge ob = new merge();
-        ob.sort(arr, 0, arr.length - 1);
-
-        System.out.println("\nSorted array");
-        printArray(arr);
     }
 }

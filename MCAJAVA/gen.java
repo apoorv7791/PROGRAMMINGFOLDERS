@@ -9,6 +9,7 @@ class gen {
         printElements(new Integer[] { 1, 2, 3, 4, 5 });
         printElements(new String[] { "Hello", "World" });
         printElements(new Double[] { 1.2, 3.4, 5.6 });
+        printElements(new Character[] { 'A', 'B', 'C' });
     }
 }
 // uses of generics?

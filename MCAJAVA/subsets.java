@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 class subsets {
     public List<List<Integer>> Subsets(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
+        var res = new ArrayList<List<Integer>>();
         Backtrack(nums, 0, new ArrayList<>(), res);
         return res;
     }

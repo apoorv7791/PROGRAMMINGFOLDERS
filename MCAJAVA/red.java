@@ -5,5 +5,6 @@ public class red {
             System.out.println(num % 10);
             num = num / 10;
         }
+        System.out.println("The number has been reversed." + num);
     }
 }

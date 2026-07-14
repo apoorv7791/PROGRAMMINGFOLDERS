@@ -6,7 +6,7 @@ import java.util.HashMap;
 
 public class Two {
     public int[] TwoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        var map = new HashMap<Integer, Integer>();
         for (int i = 0; i < nums.length; i++) {
             int complement = target - nums[i];
             if (map.containsKey(complement)) {
@@ -31,3 +31,11 @@ public class Two {
 // use a hashmap
 // time complexity: O(n)
 // space complexity: O(1)
+
+// dry run
+// nums = [2, 7, 11, 15]
+// target = 9;
+// map = {}
+// nums[0] = 2
+// compliment = target - nums[i] = 9 - 2 = 7 , 7 in map ? no -> map = {7: 1}
+// nums[1] = 2 target - nums[i] = 9 - 7 = 2 , 7 in the map yes -> {2: 0, 7: 1}

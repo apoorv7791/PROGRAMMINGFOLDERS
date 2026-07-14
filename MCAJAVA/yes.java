@@ -3,12 +3,12 @@ import java.util.List;
 
 class yes {
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        List<Integer> temp = new ArrayList<>();
+        var res = new ArrayList<List<Integer>>();
+        var temp = new ArrayList<Integer>();
         Backtrack(nums, res, temp);
         return res;
     }
-        
+
     public void Backtrack(int[] nums, List<List<Integer>> res, List<Integer> temp) {
         if (temp.size() == nums.length) {
             res.add(new ArrayList<>(temp));
