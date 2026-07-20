@@ -3,7 +3,7 @@ import java.util.List;
 
 class paren {
     public List<String> generateParenthesis(int n) {
-        List<String> res = new ArrayList<>();
+        var res = new ArrayList<String>();
         dfs(n, "", 0, 0, res);
         return res;
     }

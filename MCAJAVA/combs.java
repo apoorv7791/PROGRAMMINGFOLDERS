@@ -4,7 +4,7 @@ import java.util.List;
 
 public class combs {
     public List<List<Integer>> combine(int n, int k) {
-        List<List<Integer>> res = new ArrayList<>();
+        var res = new ArrayList<List<Integer>>();
         Backtrack(n, k, 1, new ArrayList<>(), res);
         return res;
     }
