@@ -1,8 +1,8 @@
-import java.util.HashSet;
+import java.util.*;
 
 public class setter {
     public static void main(String[] args) {
-        HashSet<Integer> h = new HashSet<>();
+        var h = new HashSet<>();
         int arr[] = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5 };
         for (int i : arr) {
             if (h.contains(arr[i])) {
