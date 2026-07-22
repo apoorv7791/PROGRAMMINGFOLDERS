@@ -7,12 +7,13 @@ import java.util.*;
 class TwoSum{
     public int[] TwoSumPair(int[] nums, int target){
 	int n = nums.length;
+	var map = new HashMap<Integer, Integer>();
 	for(int i = 0; i < n; i++){
-           for(int j = i + 1; j < n; j++){
-		if (nums[i] + nums[j] == target){
-			return new int[]{i, j};
-		}
-	      }
+		int compliment = target - nums[i];
+		if (map.containsKey(compliment)){
+			return new int[]{map.get(compliment), i};
+		} 
+		map.put(nums[i], i);
 	}
 	return new int[]{};
     }
@@ -27,16 +28,6 @@ class TwoSum{
 
 // nums = [2, 7, 11, 15], target = 9
 // brute force : check every pair available and return those indices that gives us the valid ouput
-// i = 0
-// j = 1 -> 2 + 7 = 9
-// j = 2 -> 2 + 11 = 13
-// j = 3 -> 2 + 15 = 17
-
-// i = 1
-// j = 2 -> 7 + 11 = 18
-// j = 3 -> 7 + 15 = 22
-
-// i = 2
-// j = 3 -> 11 + 15 = 26
-// found pair : [0, 1] 
+// map = {};
+// 
 // this approach gives us the time complexity of O(n^2)
