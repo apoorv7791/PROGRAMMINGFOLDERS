@@ -29,5 +29,10 @@ class TwoSum{
 // nums = [2, 7, 11, 15], target = 9
 // brute force : check every pair available and return those indices that gives us the valid ouput
 // map = {};
-// 
+// i = 0, 2 
+// 9 - 2 = 7 ? in the map? no  
+// map = {2: 0}
+// i = 1 
+// 9 - 7 = 2 ? in the map? yes
+// map = {2 : 0, 7: 1} 
 // this approach gives us the time complexity of O(n^2)
