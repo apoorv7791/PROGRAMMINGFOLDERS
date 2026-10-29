@@ -6,7 +6,10 @@ class strength {
 		for(int i : nums){
 			map.put(i, map.getOrDefault(i, 0) + 1);
 		}
-		System.out.println(map);
+		IO.println("Elements and their frequencies :");
+		for(var entry : map.entrySet()){
+			IO.println(entry);
+		}
 	}
 }
 
